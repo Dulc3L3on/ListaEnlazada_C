@@ -90,8 +90,9 @@ void buscarAPersona(int codigoUnico){
         if(hallado ==0){
             printf("    --No se encontró a la persona--\n");//Ahí buscas si a un struct se le puede hacer null... yo creo que no xD
         }else{
-            printf("-> coincidencias halladas %d: ", hallado);
-        }                
+            printf("\t\t\t\tcoincidencias halladas %d: \n", hallado);
+        }    
+        return;            
     }           
     printf("\t--Listado vacío, nada que buscar--\n");
 }
@@ -127,15 +128,15 @@ void eliminarAPersona(int codigoUnico){//para ahorrarte el tener que estar pasan
                     nodoAuxiliar = nodoAuxiliar->nodoSiguiente;//Recuerda, el & no se pone porque el valor por defecto que devuelve el puntero es una dirección xD
             }
         }     
-        printf("NO se halló ningún codigo = %d", codigoUnico);   
+        printf("\t--NO se halló ningún codigo = %d--\n", codigoUnico);   
         return;//es decir que no se encontró el dato, ya sea porque no tenía nada la lista o porque de verdad no está xD
     }           
-    printf("El listado está vacío, nada que eliminar");//Este será para cuando la lista no posee nada [por el hecho de ser null]    
+    printf("    --El listado está vacío, nada que eliminar--\n");//Este será para cuando la lista no posee nada [por el hecho de ser null]    
 }
 
 void mostrarElementosLista(){//también podrías haber colocado un número para que vean solo cierta cantidad, pero si por el hecho de que podrían colocar un número > a los existentes, tendrías que hacer algo para evitarlo xD, sino tronitos xD
     if(listaDePersonas.tamanioLista ==0){
-        printf("Lista vacía, nada que mostrar");
+        printf("    --Lista vacía, nada que mostrar--\n");
         
     }else{
         struct Nodo *nodoAuxiliar = listaDePersonas.primerNodo;
